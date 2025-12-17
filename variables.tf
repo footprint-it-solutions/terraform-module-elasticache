@@ -27,6 +27,12 @@ variable "data_tiering_enabled" {
   default     = false
 }
 
+variable "description" {
+  description = "The description of the ElastiCache replication group."
+  type        = string
+  default     = "ElastiCache replication group"
+}
+
 variable "engine_version" {
   description = "The version number of the cache engine to be used for this cluster"
   type        = string

@@ -47,6 +47,7 @@ module "elasticache" {
 | automatic_failover_enabled | Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails | `bool` | `true` | no |
 | cluster_mode | Specifies whether Redis Cluster mode is enabled. | `string` | `"disabled"` | no |
 | data_tiering_enabled | Specifies whether to enable data tiering. Data tiering is only supported for replication groups using the r6gd node type | `bool` | `false` | no |
+| description | The description of the ElastiCache replication group. | `string` | `"ElastiCache replication group"` | no |
 | engine_version | The version number of the cache engine to be used for this cluster | `string` | `"6.0.5"` | no |
 | multi_az_enabled | Specifies whether to enable Multi-AZ Support for the replication group | `bool` | `true` | no |
 | name | The name of the ElastiCache cluster | `string` | - | yes |
