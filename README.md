@@ -43,6 +43,7 @@ module "elasticache" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| encryption_at_rest_enabled | Specifies whether to enable encryption at rest. | `bool` | `true` | no |
 | automatic_failover_enabled | Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails | `bool` | `true` | no |
 | cluster_mode | Specifies whether Redis Cluster mode is enabled. | `string` | `"disabled"` | no |
 | data_tiering_enabled | Specifies whether to enable data tiering. Data tiering is only supported for replication groups using the r6gd node type | `bool` | `false` | no |
@@ -57,6 +58,7 @@ module "elasticache" {
 | security_group_ids | A list of security group IDs to associate with this cache cluster | `list(string)` | - | yes |
 | subnet_ids | A list of subnet IDs to associate with the ElastiCache cluster | `list(string)` | - | yes |
 | tags | A mapping of tags to assign to the resource | `map(string)` | `{}` | no |
+| encryption_in_transit_enabled | Specifies whether to enable encryption in transit. | `bool` | `true` | no |
 
 ## Outputs
 

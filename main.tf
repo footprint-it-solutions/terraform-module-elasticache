@@ -4,6 +4,7 @@ resource "aws_elasticache_subnet_group" "default" {
 }
 
 resource "aws_elasticache_replication_group" "default" {
+  at_rest_encryption_enabled    = var.encryption_at_rest_enabled
   automatic_failover_enabled    = var.automatic_failover_enabled
   cluster_mode                  = var.cluster_mode
   data_tiering_enabled          = var.data_tiering_enabled
@@ -20,4 +21,5 @@ resource "aws_elasticache_replication_group" "default" {
   security_group_ids            = var.security_group_ids
   subnet_group_name             = aws_elasticache_subnet_group.default.name
   tags                          = local.tags
+  transit_encryption_enabled    = var.encryption_in_transit_enabled
 }

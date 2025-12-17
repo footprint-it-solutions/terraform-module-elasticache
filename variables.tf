@@ -1,3 +1,9 @@
+variable "encryption_at_rest_enabled" {
+  description = "Specifies whether to enable encryption at rest."
+  type        = bool
+  default     = true
+}
+
 variable "automatic_failover_enabled" {
   description = "Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails"
   type        = bool
@@ -82,4 +88,10 @@ variable "tags" {
   description = "A mapping of tags to assign to the resource"
   type        = map(string)
   default     = {}
+}
+
+variable "encryption_in_transit_enabled" {
+  description = "Specifies whether to enable encryption in transit."
+  type        = bool
+  default     = true
 }
