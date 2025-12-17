@@ -68,6 +68,12 @@ variable "num_node_groups" {
   default     = 1
 }
 
+variable "preferred_cache_cluster_azs" {
+  description = "A list of EC2 availability zones in which the replication group's cache clusters will be created. The first item in the list will be the primary node. Ignored when updating."
+  type        = list(string)
+  default     = null
+}
+
 variable "replicas_per_node_group" {
   description = "The number of replicas per node group. Only used when cluster_mode is enabled."
   type        = number
