@@ -56,7 +56,7 @@ variable "node_type" {
   default     = "cache.t2.micro"
 }
 
-variable "number_cache_clusters" {
+variable "num_cache_clusters" {
   description = "The number of cache clusters (nodes) in this replication group. Only used when cluster_mode is disabled."
   type        = number
   default     = 2

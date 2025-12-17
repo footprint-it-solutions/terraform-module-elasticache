@@ -15,7 +15,7 @@ resource "aws_elasticache_replication_group" "cluster_disabled" {
   engine_version                = var.engine_version
   multi_az_enabled              = var.multi_az_enabled
   node_type                     = var.node_type
-  number_cache_clusters         = var.number_cache_clusters
+  num_cache_clusters            = var.num_cache_clusters
   parameter_group_name          = var.parameter_group_name
   preferred_cache_cluster_azs   = var.preferred_cache_cluster_azs
   replication_group_id          = var.name
