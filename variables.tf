@@ -34,9 +34,12 @@ variable "description" {
 }
 
 variable "engine_version" {
-  description = "The version number of the cache engine to be used for this cluster"
+  description =<<EOT
+   The version number of the cache engine to be used for this cluster.
+   For Redis v6 or higher, use <major>.<minor>. For Redis v5 or lower, use <major>.<minor>.<patch>.
+  EOT
   type        = string
-  default     = "6.0.5"
+  default     = "6.0"
 }
 
 variable "multi_az_enabled" {
