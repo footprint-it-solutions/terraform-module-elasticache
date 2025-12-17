@@ -1,9 +1,3 @@
-variable "encryption_at_rest_enabled" {
-  description = "Specifies whether to enable encryption at rest."
-  type        = bool
-  default     = true
-}
-
 variable "automatic_failover_enabled" {
   description = "Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails"
   type        = bool
@@ -31,6 +25,18 @@ variable "description" {
   description = "The description of the ElastiCache replication group."
   type        = string
   default     = "ElastiCache replication group"
+}
+
+variable "encryption_at_rest_enabled" {
+  description = "Specifies whether to enable encryption at rest."
+  type        = bool
+  default     = true
+}
+
+variable "encryption_in_transit_enabled" {
+  description = "Specifies whether to enable encryption in transit."
+  type        = bool
+  default     = true
 }
 
 variable "engine_version" {
@@ -71,6 +77,18 @@ variable "num_node_groups" {
   default     = 1
 }
 
+variable "parameter_group_name" {
+  description = "The name of the parameter group to associate with this cache cluster"
+  type        = string
+  default     = "default.redis6.x"
+}
+
+variable "port" {
+  description = "The port number on which each of the cache nodes will accept connections."
+  type        = number
+  default     = 6379
+}
+
 variable "preferred_cache_cluster_azs" {
   description = "A list of EC2 availability zones in which the replication group's cache clusters will be created. The first item in the list will be the primary node. Ignored when updating."
   type        = list(string)
@@ -81,12 +99,6 @@ variable "replicas_per_node_group" {
   description = "The number of replicas per node group. Only used when cluster_mode is enabled."
   type        = number
   default     = 1
-}
-
-variable "parameter_group_name" {
-  description = "The name of the parameter group to associate with this cache cluster"
-  type        = string
-  default     = "default.redis6.x"
 }
 
 variable "security_group_ids" {
@@ -103,10 +115,4 @@ variable "tags" {
   description = "A mapping of tags to assign to the resource"
   type        = map(string)
   default     = {}
-}
-
-variable "encryption_in_transit_enabled" {
-  description = "Specifies whether to enable encryption in transit."
-  type        = bool
-  default     = true
 }

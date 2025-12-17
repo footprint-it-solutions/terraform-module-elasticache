@@ -55,6 +55,7 @@ module "elasticache" {
 | num_cache_clusters | The number of cache clusters (nodes) in this replication group. Only used when cluster_mode is disabled. | `number` | `2` | no |
 | num_node_groups | The number of node groups (shards) for this Redis replication group. Only used when cluster_mode is enabled. | `number` | `1` | no |
 | preferred_cache_cluster_azs | A list of EC2 availability zones in which the replication group's cache clusters will be created. The first item in the list will be the primary node. Ignored when updating. | `list(string)` | `null` | no |
+| port | The port number on which each of the cache nodes will accept connections. | `number` | `6379` | no |
 | replicas_per_node_group | The number of replicas per node group. Only used when cluster_mode is enabled. | `number` | `1` | no |
 | parameter_group_name | The name of the parameter group to associate with this cache cluster | `string` | `"default.redis6.x"` | no |
 | security_group_ids | A list of security group IDs to associate with this cache cluster | `list(string)` | - | yes |

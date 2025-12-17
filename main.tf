@@ -17,6 +17,7 @@ resource "aws_elasticache_replication_group" "cluster_disabled" {
   node_type                     = var.node_type
   num_cache_clusters            = var.num_cache_clusters
   parameter_group_name          = var.parameter_group_name
+  port                          = var.port
   preferred_cache_cluster_azs   = var.preferred_cache_cluster_azs
   replication_group_id          = var.name
   security_group_ids            = var.security_group_ids
@@ -40,6 +41,7 @@ resource "aws_elasticache_replication_group" "cluster_enabled" {
   num_node_groups               = var.num_node_groups
   replicas_per_node_group       = var.replicas_per_node_group
   parameter_group_name          = var.parameter_group_name
+  port                          = var.port
   replication_group_id          = var.name
   security_group_ids            = var.security_group_ids
   subnet_group_name             = aws_elasticache_subnet_group.default.name
