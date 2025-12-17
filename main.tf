@@ -1,5 +1,5 @@
 resource "aws_elasticache_subnet_group" "default" {
-  name       = "${var.name}-elasticache-subnet-group-${var.name}"
+  name       = "${var.name}-elasticache-subnet-group"
   subnet_ids = var.subnet_ids
 }
 
